@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenGarden — Cửa hàng cây cảnh toàn quốc</title>
+  <meta name="description" content="GreenGarden by Nhật Linh — Cửa hàng cây cảnh giao toàn quốc: cây nội thất, bonsai, hoa kiểng, cỏ trang trí, chậu & vật tư. Hotline 0704 107 623."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            gg: {
+              bg: '#0b1f16',
+              card: '#0f2a1d',
+              accent: '#22c55e',
+              accent2: '#86efac',
+              text: '#e5f5ea',
+            }
+          },
+          boxShadow: {
+            glow: '0 0 0 2px rgba(34,197,94,0.2), 0 20px 60px rgba(0,0,0,0.4)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass { backdrop-filter: blur(8px); background: rgba(255,255,255,0.04); }
+    .mask-radial { mask-image: radial-gradient(ellipse at center, black 55%, transparent 75%); }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-8px);} }
+  </style>
+</head>
+<body class="bg-gg-bg text-gg-text font-sans antialiased">
+  <!-- Top bar -->
+  <div class="w-full text-sm text-center py-2 bg-emerald-900/40 border-b border-emerald-800/40">
+    Giao hàng toàn quốc • Cây chuẩn vườn • Đổi trả 7 ngày
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-emerald-950/30 bg-emerald-950/60">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-700 grid place-items-center shadow-glow">
+          <span class="text-emerald-950 font-extrabold">G</span>
+        </div>
+        <a href="#" class="text-lg sm:text-xl font-extrabold tracking-tight">GreenGarden</a>
+        <span class="hidden md:inline text-emerald-300/70 text-sm ml-2">by Nhật Linh</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#danh-muc" class="hover:text-emerald-200">Danh mục</a>
+        <a href="#san-pham" class="hover:text-emerald-200">Sản phẩm</a>
+        <a href="#uu-diem" class="hover:text-emerald-200">Ưu điểm</a>
+        <a href="#lien-he" class="hover:text-emerald-200">Liên hệ</a>
+      </div>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="tel:0704107623" class="px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400 transition-colors">0704 107 623</a>
+      </div>
+      <button id="menuBtn" class="md:hidden p-2 rounded-lg border border-emerald-800 hover:bg-emerald-900/40">☰</button>
+    </nav>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <div class="grid gap-2 text-sm">
+        <a href="#danh-muc" class="px-3 py-2 rounded-lg hover:bg-emerald-900/40">Danh mục</a>
+        <a href="#san-pham" class="px-3 py-2 rounded-lg hover:bg-emerald-900/40">Sản phẩm</a>
+        <a href="#uu-diem" class="px-3 py-2 rounded-lg hover:bg-emerald-900/40">Ưu điểm</a>
+        <a href="#lien-he" class="px-3 py-2 rounded-lg hover:bg-emerald-900/40">Liên hệ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-30 mask-radial"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+            Cây cảnh đẹp cho <span class="text-emerald-400">mọi không gian</span>
+          </h1>
+          <p class="mt-4 text-emerald-100/85 max-w-xl">Cây nội thất, bonsai, hoa kiểng, cỏ trang trí, vật tư — giao hàng toàn quốc, tư vấn chọn cây theo ánh sáng & diện tích. Cây chuẩn vườn Sa Đéc.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#san-pham" class="px-5 py-3 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400 shadow-glow">Mua ngay</a>
+            <a href="#danh-muc" class="px-5 py-3 rounded-xl border border-emerald-700 hover:bg-emerald-900/40">Khám phá danh mục</a>
+          </div>
+          <div class="mt-6 text-sm text-emerald-200/80">✔ Bảo hành sống 7 ngày • ✔ Đóng gói chống sốc • ✔ Hỗ trợ sau bán</div>
+        </div>
+        <div class="relative h-64 sm:h-80 md:h-[28rem]">
+          <div class="absolute -right-6 md:right-0 top-6 w-64 sm:w-72 md:w-80 h-44 sm:h-52 md:h-56 rounded-3xl glass border border-emerald-800 shadow-glow floaty grid place-items-center">
+            <span class="text-center px-6">Lựa chọn theo <b>ánh sáng</b><br/><span class="text-sm opacity-80">Sáng mạnh • Bán phần • Ít sáng</span></span>
+          </div>
+          <div class="absolute right-12 md:right-24 bottom-4 w-64 sm:w-72 md:w-96 aspect-[4/3] rounded-3xl overflow-hidden border border-emerald-800 shadow-glow">
+            <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?q=80&w=1600&auto=format&fit=crop" alt="Green interior" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & filters -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="danh-muc">
+    <div class="bg-gg-card border border-emerald-800/50 rounded-2xl p-4 md:p-6 -mt-8 md:-mt-12 relative z-10 shadow-glow">
+      <div class="grid md:grid-cols-3 gap-4 items-center">
+        <div class="md:col-span-2 flex items-center gap-3">
+          <input id="searchInput" type="text" placeholder="Tìm cây theo tên, công dụng, không gian…" class="w-full px-4 py-3 rounded-xl bg-emerald-950/40 border border-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"/>
+          <button id="clearSearch" class="px-3 py-3 rounded-xl border border-emerald-800 hover:bg-emerald-900/40">Xóa</button>
+        </div>
+        <div class="flex flex-wrap gap-2 justify-start md:justify-end">
+          <button class="filter-btn px-3 py-2 rounded-xl border border-emerald-800 hover:bg-emerald-900/40 text-sm" data-filter="all">Tất cả</button>
+          <button class="filter-btn px-3 py-2 rounded-xl border border-emerald-800 hover:bg-emerald-900/40 text-sm" data-filter="noithat">Nội thất</button>
+          <button class="filter-btn px-3 py-2 rounded-xl border border-emerald-800 hover:bg-emerald-900/40 text-sm" data-filter="bonsai">Bonsai</button>
+          <button class="filter-btn px-3 py-2 rounded-xl border border-emerald-800 hover:bg-emerald-900/40 text-sm" data-filter="hoakieng">Hoa kiểng</button>
+          <button class="filter-btn px-3 py-2 rounded-xl border border-emerald-800 hover:bg-emerald-900/40 text-sm" data-filter="co">Cỏ trang trí</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10" id="san-pham">
+    <div class="flex items-end justify-between mb-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Sản phẩm nổi bật</h2>
+      <a href="#lien-he" class="text-sm underline underline-offset-4 hover:text-emerald-200">Cần tư vấn? Liên hệ ngay</a>
+    </div>
+
+    <div id="productGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+      <!-- Product Card Template Examples -->
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="noithat de-ban ít-sáng">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1526081347589-7fa3cb4730f5?q=80&w=1400&auto=format&fit=crop" alt="Monstera deliciosa" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Bán chạy</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Monstera Deliciosa</h3>
+          <p class="text-sm opacity-80">Cây nội thất biểu tượng, lá xẻ đẹp. Hợp phòng khách, studio.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">390.000đ</div>
+              <div class="text-xs opacity-70">Chậu nhựa 18cm</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Monstera Deliciosa">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="bonsai ngoai-troi nắng-mạnh">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1545243424-0ce743321e11?q=80&w=1400&auto=format&fit=crop" alt="Bonsai tùng" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Sưu tầm</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Bonsai Tùng La Hán</h3>
+          <p class="text-sm opacity-80">Thế dáng cổ, phong thủy tốt. Hợp sân vườn, biệt thự.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">2.900.000đ</div>
+              <div class="text-xs opacity-70">Cây 40–50cm</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Bonsai Tùng La Hán">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="hoakieng ban-cong nắng-vừa">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1470167290877-7d5d3446de4c?q=80&w=1400&auto=format&fit=crop" alt="Dạ yến thảo" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Ưa nhìn</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Dạ Yến Thảo Treo</h3>
+          <p class="text-sm opacity-80">Nở rộ, nhiều màu. Tạo điểm nhấn ban công, hiên nhà.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">120.000đ</div>
+              <div class="text-xs opacity-70">Giỏ treo</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Dạ Yến Thảo Treo">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="co san-vuon nắng-mạnh">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1605391449988-fc6e2ec4a59d?q=80&w=1400&auto=format&fit=crop" alt="Cỏ Nhung Nhật" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Best-seller</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Cỏ Nhung Nhật</h3>
+          <p class="text-sm opacity-80">Mịn, chịu dẫm tốt, phủ xanh sân vườn – khuôn viên.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">37.000đ</div>
+              <div class="text-xs opacity-70">/m² (tham khảo)</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Cỏ Nhung Nhật">Báo giá</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="noithat de-cham sóc ít-sáng">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1614594858980-2a7f3b07d3b2?q=80&w=1400&auto=format&fit=crop" alt="Lưỡi hổ" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Dễ chăm</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Lưỡi Hổ (Sansevieria)</h3>
+          <p class="text-sm opacity-80">Lọc không khí, chịu bóng, hợp phòng ngủ – văn phòng.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">95.000đ</div>
+              <div class="text-xs opacity-70">Chậu 14–16cm</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Lưỡi Hổ">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="hoakieng ban-cong nắng-vừa">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1516375195442-c3b8c87c3a6b?q=80&w=1400&auto=format&fit=crop" alt="Hoa giấy" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Phổ biến</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Hoa Giấy</h3>
+          <p class="text-sm opacity-80">Sai hoa, bền màu, hợp cổng nhà – hàng rào – giàn leo.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">180.000đ</div>
+              <div class="text-xs opacity-70">Cây 40–60cm</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Hoa Giấy">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="noithat de-cham sóc ít-sáng">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=1400&auto=format&fit=crop" alt="Trầu bà" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Hot</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Trầu Bà Leo Cột</h3>
+          <p class="text-sm opacity-80">Xanh mướt, dễ trồng, hợp góc làm việc & hành lang.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">210.000đ</div>
+              <div class="text-xs opacity-70">Cây 60–80cm</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Trầu Bà Leo Cột">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="product group rounded-2xl bg-gg-card border border-emerald-800/50 overflow-hidden" data-tags="vattu dat-phan phu-kien">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?q=80&w=1400&auto=format&fit=crop" alt="Đất trồng" class="w-full h-44 object-cover group-hover:scale-[1.02] transition"/>
+          <span class="absolute top-3 left-3 text-xs bg-emerald-500 text-emerald-950 px-2 py-1 rounded-full font-semibold">Vật tư</span>
+        </div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg">Đất Trồng Hữu Cơ</h3>
+          <p class="text-sm opacity-80">Tơi xốp, dinh dưỡng cân bằng. Phù hợp đa số cây cảnh.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div>
+              <div class="font-extrabold">45.000đ</div>
+              <div class="text-xs opacity-70">Bao 5kg</div>
+            </div>
+            <button class="order-btn px-3 py-2 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" data-product="Đất Trồng Hữu Cơ">Đặt nhanh</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16" id="uu-diem">
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="rounded-2xl bg-gg-card border border-emerald-800/50 p-5">
+        <div class="text-2xl">🚚</div>
+        <h3 class="mt-2 font-extrabold text-lg">Giao toàn quốc 2–5 ngày</h3>
+        <p class="text-sm opacity-85 mt-1">Đóng gói chống sốc, bảo đảm cây nguyên vẹn. Có hình chụp trước khi gửi.</p>
+      </div>
+      <div class="rounded-2xl bg-gg-card border border-emerald-800/50 p-5">
+        <div class="text-2xl">🪴</div>
+        <h3 class="mt-2 font-extrabold text-lg">Cây chuẩn vườn Sa Đéc</h3>
+        <p class="text-sm opacity-85 mt-1">Nguồn giống khỏe, chăm kỹ, giá gốc nhà vườn. Tư vấn trồng theo ánh sáng thực tế.</p>
+      </div>
+      <div class="rounded-2xl bg-gg-card border border-emerald-800/50 p-5">
+        <div class="text-2xl">💬</div>
+        <h3 class="mt-2 font-extrabold text-lg">Hỗ trợ sau bán</h3>
+        <p class="text-sm opacity-85 mt-1">Bảo hành sống 7 ngày. Hướng dẫn chăm sóc chi tiết qua Zalo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
+    <div class="rounded-3xl bg-gradient-to-br from-emerald-600 to-emerald-400 text-emerald-950 p-8 md:p-12 grid md:grid-cols-2 gap-6 items-center shadow-glow">
+      <div>
+        <h3 class="text-2xl md:text-3xl font-extrabold">Không biết chọn cây gì cho không gian của bạn?</h3>
+        <p class="mt-2 opacity-90">Gửi ảnh góc nhà/văn phòng và ngân sách — chúng tôi tư vấn set cây hoàn chỉnh trong 5 phút.</p>
+      </div>
+      <div class="flex gap-3 md:justify-end">
+        <a href="https://zalo.me/0704107623" target="_blank" class="px-5 py-3 rounded-xl bg-emerald-950 text-emerald-100 font-semibold hover:opacity-90">Chat Zalo</a>
+        <a href="tel:0704107623" class="px-5 py-3 rounded-xl bg-white text-emerald-900 font-semibold hover:opacity-90">Gọi ngay</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-20" id="lien-he">
+    <div class="grid md:grid-cols-5 gap-8">
+      <div class="md:col-span-3 rounded-2xl bg-gg-card border border-emerald-800/50 p-6">
+        <h3 class="text-xl font-extrabold">Liên hệ đặt cây</h3>
+        <p class="mt-1 text-sm opacity-80">Vui lòng để lại thông tin, đội ngũ GreenGarden sẽ gọi lại trong 15–30 phút.</p>
+        <form id="orderForm" class="grid sm:grid-cols-2 gap-4 mt-5">
+          <input name="name" required class="px-4 py-3 rounded-xl bg-emerald-950/40 border border-emerald-800" placeholder="Họ và tên"/>
+          <input name="phone" required class="px-4 py-3 rounded-xl bg-emerald-950/40 border border-emerald-800" placeholder="Số điện thoại"/>
+          <input name="product" class="px-4 py-3 rounded-xl bg-emerald-950/40 border border-emerald-800 sm:col-span-2" placeholder="Tên sản phẩm (nếu có)"/>
+          <textarea name="note" rows="3" class="px-4 py-3 rounded-xl bg-emerald-950/40 border border-emerald-800 sm:col-span-2" placeholder="Nhu cầu & địa chỉ giao hàng"></textarea>
+          <div class="sm:col-span-2 flex gap-3">
+            <button class="px-5 py-3 rounded-xl bg-emerald-500 text-emerald-950 font-semibold hover:bg-emerald-400" type="submit">Gửi yêu cầu</button>
+            <a href="mailto:LNXRobotics@gmail.com?subject=Đặt%20cây%20GreenGarden" class="px-5 py-3 rounded-xl border border-emerald-800 hover:bg-emerald-900/40">Email</a>
+          </div>
+        </form>
+      </div>
+      <div class="md:col-span-2 rounded-2xl bg-gg-card border border-emerald-800/50 p-6">
+        <h4 class="font-bold">Thông tin</h4>
+        <div class="mt-3 grid gap-2 text-sm">
+          <div>📞 Hotline/Zalo: <a class="underline hover:text-emerald-200" href="tel:0704107623">0704 107 623</a></div>
+          <div>✉️ Email: <a class="underline hover:text-emerald-200" href="mailto:LNXRobotics@gmail.com">LNXRobotics@gmail.com</a></div>
+          <div>📍 Địa chỉ: Tân Khánh Đông, Sa Đéc, Đồng Tháp</div>
+          <div>🕘 Thời gian: 8:00 – 20:00 (T2–CN)</div>
+        </div>
+        <div class="mt-5 text-xs opacity-70">*Giá và hình ảnh chỉ mang tính tham khảo, vui lòng liên hệ để nhận báo giá mới nhất.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-emerald-800/50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>© <span id="year"></span> GreenGarden by Nhật Linh · <a href="https://nhatlinh.io.vn" class="underline hover:text-emerald-200" target="_blank" rel="noopener">nhatlinh.io.vn</a></div>
+      <div class="opacity-80">Cây chuẩn vườn · Giao toàn quốc · Bảo hành 7 ngày</div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Search & filter
+    const searchInput = document.getElementById('searchInput');
+    const clearSearch = document.getElementById('clearSearch');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const products = Array.from(document.querySelectorAll('.product'));
+
+    function applyFilters() {
+      const q = (searchInput?.value || '').toLowerCase();
+      const activeFilter = document.querySelector('.filter-btn.active')?.dataset.filter || 'all';
+      products.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const tags = card.dataset.tags || '';
+        const matchText = !q || text.includes(q);
+        const matchTag = activeFilter === 'all' || tags.includes(activeFilter);
+        card.style.display = (matchText && matchTag) ? '' : 'none';
+      });
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active','bg-emerald-500','text-emerald-950'));
+        btn.classList.add('active','bg-emerald-500','text-emerald-950');
+        applyFilters();
+      });
+    });
+
+    searchInput?.addEventListener('input', applyFilters);
+    clearSearch?.addEventListener('click', () => { searchInput.value = ''; applyFilters(); });
+
+    // Quick order: prefill product name into form
+    const orderBtns = document.querySelectorAll('.order-btn');
+    const orderForm = document.getElementById('orderForm');
+    orderBtns.forEach(btn => btn.addEventListener('click', () => {
+      const name = btn.dataset.product || '';
+      const productField = orderForm?.querySelector('[name="product"]');
+      if (productField) productField.value = name;
+      document.getElementById('lien-he')?.scrollIntoView({ behavior: 'smooth' });
+    }));
+
+    // Simple submit (no backend) -> open Zalo chat link with prefilled text
+    orderForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(orderForm);
+      const msg = `Đặt cây GreenGarden%0A- Họ tên: ${encodeURIComponent(data.get('name'))}%0A- SĐT: ${encodeURIComponent(data.get('phone'))}%0A- Sản phẩm: ${encodeURIComponent(data.get('product')||'') }%0A- Ghi chú: ${encodeURIComponent(data.get('note')||'')}`;
+      window.open(`https://zalo.me/0704107623?text=${msg}`, '_blank');
+    });
+  </script>
+</body>
+</html>
